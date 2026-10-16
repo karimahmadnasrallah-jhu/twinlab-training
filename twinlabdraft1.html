@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TWIN Lab Training Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f8fa; --card:#ffffff; --ink:#1b2733; --muted:#5b6b7a; --line:#dde5ea;
+  --navy:#1f3a5f; --teal:#2e7d8c; --tint:#eaf2f5; --note:#fff8e6; --noteLine:#f0d58a;
+  --done:#9aa8b4;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1720; --card:#16212c; --ink:#e6edf3; --muted:#9fb0bf; --line:#263443;
+    --navy:#7fb3e0; --teal:#5fc0cf; --tint:#1b2b38; --note:#2b2615; --noteLine:#6b5a24; --done:#56636f;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.55;font-size:16px}
+.wrap{max-width:860px;margin:0 auto;padding:40px 16px 64px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;color:var(--teal);text-transform:uppercase}
+h1{font-size:clamp(30px,6vw,44px);line-height:1.1;margin:8px 0 12px;color:var(--navy);font-weight:800}
+.meta{color:var(--muted);margin:0 0 4px}
+.meta b{color:var(--ink)}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 8px}
+nav a{font-size:14px;font-weight:600;text-decoration:none;color:var(--navy);background:var(--card);border:1px solid var(--line);padding:6px 12px;border-radius:999px}
+nav a:hover{border-color:var(--teal)}
+h2{font-size:22px;color:var(--navy);margin:44px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--teal)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+/* timeline */
+.timeline{list-style:none;margin:0;padding:8px 20px}
+.timeline li{display:grid;grid-template-columns:130px 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.timeline li:last-child{border-bottom:0}
+.timeline .d{font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.timeline li.key .e{font-weight:600}
+.timeline li.break .d,.timeline li.break .e{color:var(--muted);font-style:italic}
+.timeline li.past .d,.timeline li.past .e{color:var(--done);text-decoration:line-through}
+ul.plain{margin:0;padding:16px 20px 16px 40px}
+ul.plain li{margin:4px 0}
+/* sessions */
+.session{margin-bottom:20px}
+.shead{background:var(--navy);color:#fff;padding:16px 20px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .shead{background:#1f3a5f}}
+.shead .num{font-size:12px;font-weight:700;letter-spacing:.12em;opacity:.85}
+.shead .date{font-size:13px;opacity:.85;margin-left:8px}
+.shead h3{margin:4px 0 0;font-size:22px;font-weight:700}
+.shead .opt{display:inline-block;font-size:12px;font-weight:600;background:rgba(255,255,255,.18);padding:2px 10px;border-radius:999px;margin-left:10px;vertical-align:middle}
+.row{display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--line)}
+.row .k{background:var(--tint);color:var(--teal);font-weight:700;font-size:13px;padding:12px 16px}
+.row .v{padding:12px 16px}
+.row .v ul{margin:0;padding-left:20px}
+.row .v li{margin:2px 0}
+.row.note .v{background:var(--note);font-style:italic}
+.row.dl .v{font-weight:700;color:var(--navy)}
+.sub{font-weight:700;margin:10px 0 2px}
+/* tables */
+table{width:100%;border-collapse:collapse}
+th{background:var(--teal);color:#fff;text-align:left;font-size:14px;padding:10px 16px}
+td{padding:10px 16px;border-top:1px solid var(--line)}
+tr:nth-child(even) td{background:var(--tint)}
+.ph{color:var(--muted)}
+footer{margin-top:48px;color:var(--muted);font-size:13px;text-align:center}
+@media (max-width:600px){
+  .timeline li{grid-template-columns:1fr;gap:2px}
+  .row{grid-template-columns:1fr}
+  .row .k{padding:8px 16px}
+}
+@media print{nav{display:none}body{background:#fff}.session{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow">TWIN Lab &nbsp;|&nbsp; Center for Fetal Therapy</div>
+  <h1>Fall 2026 Training Plan</h1>
+  <p class="meta">Meetings: Sundays, 9 to 10am (final time set by when2meet)</p>
+  <p class="meta"><b>Training patients:</b> <span class="ph">[IUT/PET ID], [Laser ID], [SR ID], [Monitoring ID]</span></p>
+
+  <nav>
+    <a href="#dates">Key Dates</a>
+    <a href="#before">Before Training</a>
+    <a href="#schedule">Weekly Schedule</a>
+    <a href="#mentors">Mentors</a>
+    <a href="#patients">Patients</a>
+  </nav>
+
+  <h2 id="dates">Key Dates</h2>
+  <div class="card">
+    <ul class="timeline" id="timeline">
+      <li data-date="2026-10-22"><span class="d">Thu 10/22</span><span class="e">Finish IRB and send access requests</span></li>
+      <li data-date="2026-10-23"><span class="d">Fri 10/23</span><span class="e">Send out anatomy videos and when2meet</span></li>
+      <li data-date="2026-11-08" class="key"><span class="d">Sun 11/8</span><span class="e">Training starts (Session 1)</span></li>
+      <li data-date="2026-11-12"><span class="d">Thu 11/12</span><span class="e">IRB processed (expected)</span></li>
+      <li data-date="2026-11-15"><span class="d">Sun 11/15</span><span class="e">Session 2</span></li>
+      <li data-date="2026-11-29" class="break"><span class="d">11/21 to 11/29</span><span class="e">Thanksgiving break</span></li>
+      <li data-date="2026-11-22"><span class="d">Sun 11/22</span><span class="e">Session 3</span></li>
+      <li data-date="2026-11-29"><span class="d">Sun 11/29</span><span class="e">Session 4</span></li>
+      <li data-date="2026-12-06"><span class="d">Sun 12/6</span><span class="e">Optional Session 5</span></li>
+      <li data-date="2026-12-11"><span class="d">Fri 12/11</span><span class="e">Last day of classes</span></li>
+      <li data-date="2026-12-12" class="key"><span class="d">Sat 12/12</span><span class="e">All training forms done</span></li>
+    </ul>
+  </div>
+
+  <h2 id="before">Before Training Starts</h2>
+  <div class="card">
+    <ul class="plain">
+      <li>Watch the anatomy videos sent out on 10/23.</li>
+      <li>Fill out the when2meet so we can lock in a meeting time.</li>
+      <li>IRB access is expected around 11/12. Hands on form work starts once you have access.</li>
+    </ul>
+  </div>
+
+  <h2 id="schedule">Weekly Schedule</h2>
+
+  <section class="card session">
+    <div class="shead"><span class="num">SESSION 1</span><span class="date">Sunday, November 8</span><h3>Intro and Pretreatment</h3></div>
+    <div class="row"><div class="k">Leaders</div><div class="v ph">[Clinical lead], [Pretreatment lead]</div></div>
+    <div class="row"><div class="k">Meeting topic</div><div class="v">Welcome, anatomy and main clinical background, pretreatment forms (may run a bit long!)</div></div>
+    <div class="row"><div class="k">Task</div><div class="v"><ul>
+      <li>Fill out at least the initial pretreatment form for your patient (and additional pretreatment forms only if you have time and feel comfortable).</li>
+      <li>Check it over with your mentor.</li></ul></div></div>
+    <div class="row dl"><div class="k">Deadline</div><div class="v">9am on Sunday, 11/15</div></div>
+  </section>
+
+  <section class="card session">
+    <div class="shead"><span class="num">SESSION 2</span><span class="date">Sunday, November 15</span><h3>Treatments</h3></div>
+    <div class="row"><div class="k">Leaders</div><div class="v ph">[Demographics lead], [Treatments lead]</div></div>
+    <div class="row"><div class="k">Meeting topic</div><div class="v">Brief treatment overview, lingering pretreatment questions, demographics</div></div>
+    <div class="row"><div class="k">Task</div><div class="v"><ul>
+      <li>Watch the video for your assigned treatment (and others if you'd like!).</li>
+      <li>Fill out the treatment form for the patient you're given and check it over with your mentor.</li>
+      <li>Plan a short presentation (slideshow, infographic, etc.) of your form plus a little background on your treatment type.</li></ul>
+      <div class="sub">Treatment assignments</div>
+      <ul class="ph">
+        <li>IUT: [Mentor], patient [ID]</li>
+        <li>Laser: [Mentor], patient [ID]</li>
+        <li>Selective Reduction: [Mentors] (group project), patient [ID]</li></ul></div></div>
+    <div class="row note"><div class="k">Mentors</div><div class="v">Check in early this week to make sure your trainee is on track to have a correct form in time to prepare their presentation!</div></div>
+    <div class="row dl"><div class="k">Deadline</div><div class="v">9am on Sunday, 11/22</div></div>
+  </section>
+
+  <section class="card session">
+    <div class="shead"><span class="num">SESSION 3</span><span class="date">Sunday, November 22</span><h3>First Trimester</h3></div>
+    <div class="row"><div class="k">Leaders</div><div class="v ph">[First trimester lead], [Co lead]</div></div>
+    <div class="row"><div class="k">Meeting topic</div><div class="v">Treatment presentations and first trimester forms</div></div>
+    <div class="row"><div class="k">Task</div><div class="v"><ul>
+      <li>Fill out your new patient's first trimester form and check it over with your mentor.</li>
+      <li>Keep working on any additional pretreatment forms your first patient had.</li></ul></div></div>
+    <div class="row dl"><div class="k">Deadline</div><div class="v">9am on Sunday, 11/29</div></div>
+  </section>
+
+  <section class="card session">
+    <div class="shead"><span class="num">SESSION 4</span><span class="date">Sunday, November 29</span><h3>Maternal and Neonatal</h3></div>
+    <div class="row"><div class="k">Leaders</div><div class="v ph">[Maternal lead], [Neonatal lead]</div></div>
+    <div class="row"><div class="k">Meeting topic</div><div class="v">Maternal and neonatal forms!</div></div>
+    <div class="row"><div class="k">Task</div><div class="v"><ul>
+      <li>Fill out your patient's maternal and neonatal outcomes forms and check them over with your mentor.</li>
+      <li>Finish any remaining pretreatment forms. Our goal is to have everything done by this deadline!</li></ul></div></div>
+    <div class="row dl"><div class="k">Deadline</div><div class="v">Saturday, 12/12 (this is the deadline, whether or not Session 5 happens)</div></div>
+  </section>
+
+  <section class="card session">
+    <div class="shead"><span class="num">SESSION 5</span><span class="date">Sunday, December 6</span><h3>Overview <span class="opt">May not happen</span></h3></div>
+    <div class="row"><div class="k">Leaders</div><div class="v ph">[Lead]</div></div>
+    <div class="row"><div class="k">Meeting topic</div><div class="v">Lingering maternal and neonatal questions, plus a super brief run through the weekly tasks of a fully trained lab member</div></div>
+    <div class="row"><div class="k">Task</div><div class="v">No new forms. Just bring your questions!</div></div>
+    <div class="row dl"><div class="k">Deadline</div><div class="v">Saturday, 12/12 (final deadline for all training forms)</div></div>
+  </section>
+
+  <h2 id="mentors">Mentor Assignments</h2>
+  <div class="card"><table>
+    <thead><tr><th>Mentor</th><th>Trainees</th></tr></thead>
+    <tbody class="ph">
+      <tr><td>[Mentor 1]</td><td>[Trainee], [Trainee]</td></tr>
+      <tr><td>[Mentor 2]</td><td>[Trainee], [Trainee]</td></tr>
+    </tbody></table></div>
+
+  <h2 id="patients">Patient Assignments</h2>
+  <div class="card"><table>
+    <thead><tr><th>Mentor</th><th>Patient and treatment</th></tr></thead>
+    <tbody class="ph">
+      <tr><td>[Mentor 1]</td><td>[ID], IUT</td></tr>
+      <tr><td>[Mentor 2]</td><td>[ID], Selective Reduction</td></tr>
+    </tbody></table></div>
+
+  <footer>TWIN Lab &nbsp;|&nbsp; Fall 2026 Training Plan</footer>
+</div>
+<script>
+// Grey out key dates that have already passed
+(function(){
+  var today=new Date(); today.setHours(0,0,0,0);
+  document.querySelectorAll('#timeline li').forEach(function(li){
+    var d=new Date(li.getAttribute('data-date')+'T23:59:59');
+    if(d<today) li.classList.add('past');
+  });
+})();
+</script>
+</body>
+</html>
